@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countries</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f4f4f4;
+      }
+
+      .header {
+        background: white;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .filter-bar {
+        padding: 40px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .search {
+        width: 400px;
+        background: white;
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .search input {
+        border: none;
+        outline: none;
+        margin-left: 10px;
+        width: 100%;
+      }
+
+      .select {
+        background: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border: none;
+      }
+
+      .countries {
+        display: grid;
+        grid-template-columns: 1fr; /* бәрі астына */
+        gap: 30px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      @media (max-width: 768px) {
+        .header {
+          padding: 20px;
+        }
+
+        .filter-bar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px;
+        }
+
+        .search,
+        .select {
+          width: 100%;
+        }
+
+        .countries {
+          padding: 20px;
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .countries {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1025px) {
+        .countries {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h2>Where in the world?</h2>
+      <div>Dark Mode</div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="search">
+        <input type="text" placeholder="Search for a country..." />
+      </div>
+
+      <select class="select">
+        <option>Filter by Region</option>
+        <option>Africa</option>
+        <option>America</option>
+        <option>Asia</option>
+        <option>Europe</option>
+      </select>
+    </div>
+    <div class="countries">
+      <div class="card">
+        <img src="https://flagcdn.com/w640/de.png" />
+        <div class="card-content">
+          <h3>Germany</h3>
+          <p><b>Population:</b> 81,770,900</p>
+          <p><b>Region:</b> Europe</p>
+          <p><b>Capital:</b> Berlin</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w640/us.png" />
+        <div class="card-content">
+          <h3>USA</h3>
+          <p><b>Population:</b> 323,947,000</p>
+          <p><b>Region:</b> Americas</p>
+          <p><b>Capital:</b> Washington</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w640/br.png" />
+        <div class="card-content">
+          <h3>Brazil</h3>
+          <p><b>Population:</b> 206,135,893</p>
+          <p><b>Region:</b> Americas</p>
+          <p><b>Capital:</b> Brasilia</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w640/is.png" />
+        <div class="card-content">
+          <h3>Iceland</h3>
+          <p><b>Population:</b> 334,300</p>
+          <p><b>Region:</b> Europe</p>
+          <p><b>Capital:</b> Reykjavik</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w640/af.png" />
+        <div class="card-content">
+          <h3>Afghanistan</h3>
+          <p><b>Population:</b> 27,657,145</p>
+          <p><b>Region:</b> Asia</p>
+          <p><b>Capital:</b> Kabul</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w640/ax.png" />
+        <div class="card-content">
+          <h3>Åland Islands</h3>
+          <p><b>Population:</b> 28,875</p>
+          <p><b>Region:</b> Europe</p>
+          <p><b>Capital:</b> Mariehamn</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w640/al.png" />
+        <div class="card-content">
+          <h3>Albania</h3>
+          <p><b>Population:</b> 2,886,026</p>
+          <p><b>Region:</b> Europe</p>
+          <p><b>Capital:</b> Tirana</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://flagcdn.com/w640/dz.png" />
+        <div class="card-content">
+          <h3>Algeria</h3>
+          <p><b>Population:</b> 40,400,000</p>
+          <p><b>Region:</b> Africa</p>
+          <p><b>Capital:</b> Algiers</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
